@@ -80,7 +80,7 @@ export default function AdminMessages() {
 
               <div className={styles.messageActions}>
                 <a
-                  href={`mailto:${msg.email}?subject=Re: Tu consulta a Rootwell`}
+                  href={`mailto:${msg.email}?subject=Re: Tu consulta a AeroPulse`}
                   className="btn btn-primary"
                   style={{ fontSize: 13, padding: '8px 18px' }}
                 >

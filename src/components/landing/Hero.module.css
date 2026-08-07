@@ -25,9 +25,9 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(3, 3, 10, 0.95) 0%,
-    rgba(3, 3, 10, 0.75) 50%,
-    rgba(0, 0, 20, 0.9) 100%
+    rgba(3, 3, 10, 0.84) 0%,
+    rgba(3, 3, 10, 0.58) 50%,
+    rgba(0, 0, 20, 0.78) 100%
   );
   z-index: 1;
 }
@@ -233,6 +233,7 @@
 
 @media (max-width: 768px) {
   .droneDecor { display: none; }
+  .scrollIndicator { display: none; }
   .stats { gap: 20px; }
   .ctas { flex-direction: column; }
   .ctas .btn { width: 100%; justify-content: center; }

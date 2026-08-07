@@ -45,13 +45,20 @@ export default function VideoShowreel() {
         <div className={`reveal ${styles.wrapper}`}>
           <div className={styles.frame}>
             <div className={styles.glow} />
-            <iframe
-              src={embedUrl}
-              title="Rootwell Showreel"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className={styles.iframe}
-            />
+            {embedUrl ? (
+              <iframe
+                src={embedUrl}
+                title={`${siteConfig.companyName} Showreel`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className={styles.iframe}
+              />
+            ) : (
+              <div className={styles.emptyVideo}>
+                <span>Showreel próximamente</span>
+                <small>Estamos preparando nuestras mejores tomas aéreas.</small>
+              </div>
+            )}
           </div>
         </div>
 

@@ -16,6 +16,7 @@ export default function Gallery() {
   const { gallery, siteConfig } = useAppState()
   const [filter, setFilter] = useState<GalleryImage['category'] | 'all'>('all')
   const [lightbox, setLightbox] = useState<GalleryImage | null>(null)
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set())
   useRevealAll([filter])
 
   const filtered =
@@ -53,16 +54,30 @@ export default function Gallery() {
             <div
               key={img.id}
               className={`reveal reveal-delay-${Math.min((i % 4) + 1, 5)} ${styles.item}`}
-              onClick={() => setLightbox(img)}
+              onClick={() => !failedImages.has(img.id) && setLightbox(img)}
             >
-              <img src={img.src} alt={img.alt} loading="lazy" />
-              <div className={styles.itemOverlay}>
-                <span className={styles.itemCat}>{img.category}</span>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="M21 21l-4.35-4.35M11 8v6M8 11h6" />
-                </svg>
-              </div>
+              {failedImages.has(img.id) ? (
+                <div className={styles.imageFallback}>
+                  <span>Imagen no disponible</span>
+                  <small>{img.alt}</small>
+                </div>
+              ) : (
+                <>
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    onError={() => setFailedImages((current) => new Set(current).add(img.id))}
+                  />
+                  <div className={styles.itemOverlay}>
+                    <span className={styles.itemCat}>{img.category}</span>
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2">
+                      <circle cx="11" cy="11" r="8" />
+                      <path d="M21 21l-4.35-4.35M11 8v6M8 11h6" />
+                    </svg>
+                  </div>
+                </>
+              )}
             </div>
           ))}
         </div>

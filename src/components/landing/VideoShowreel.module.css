@@ -43,6 +43,31 @@
   background: #000;
 }
 
+.emptyVideo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-primary);
+  text-align: center;
+  background:
+    linear-gradient(rgba(4, 4, 8, 0.72), rgba(4, 4, 8, 0.72)),
+    radial-gradient(circle at 50% 35%, rgba(110, 231, 247, 0.24), transparent 42%),
+    var(--bg-deep);
+}
+
+.emptyVideo span {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.emptyVideo small {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

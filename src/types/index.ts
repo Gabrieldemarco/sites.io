@@ -1,5 +1,5 @@
 // ============================================================
-// GLOBAL TYPES — Rootwell CMS (White-Label Configurable)
+// GLOBAL TYPES — AeroPulse CMS (White-Label Configurable)
 // ============================================================
 
 export interface ServiceItem {

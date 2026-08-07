@@ -30,7 +30,7 @@ export default function AdminLayout() {
         <div className={styles.sidebarLogo}>
           <span>🚁</span>
           <div>
-            <p className={styles.logoText}>Rootwell</p>
+            <p className={styles.logoText}>AeroPulse</p>
             <p className={styles.logoSub}>Panel Admin</p>
           </div>
         </div>
