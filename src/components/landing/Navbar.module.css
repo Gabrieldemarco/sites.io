@@ -45,7 +45,7 @@
 .logoIcon {
   font-size: 26px;
   -webkit-text-fill-color: initial;
-  filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.7)) brightness(1.2);
+  filter: drop-shadow(0 0 10px rgba(110, 231, 247, 0.5));
 }
 
 .links {
@@ -66,8 +66,7 @@
 
 .link:hover {
   color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 /* Hamburger */
