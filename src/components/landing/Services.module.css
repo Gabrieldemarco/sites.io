@@ -16,21 +16,23 @@
   cursor: default;
   position: relative;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .card::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(0, 212, 255, 0.05) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.06) 0%, transparent 60%);
   opacity: 0;
   transition: opacity var(--transition);
 }
 
 .card:hover {
   transform: translateY(-6px);
-  border-color: rgba(0, 212, 255, 0.3);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(0, 212, 255, 0.1);
+  border-color: rgba(0, 212, 255, 0.25);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(0, 212, 255, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .card:hover::before {
@@ -47,7 +49,7 @@
 .icon {
   font-size: 40px;
   line-height: 1;
-  filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.4));
+  filter: drop-shadow(0 0 12px rgba(0, 212, 255, 0.5));
 }
 
 .tag {
@@ -56,10 +58,11 @@
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--primary);
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(0, 212, 255, 0.08);
   border: 1px solid rgba(0, 212, 255, 0.2);
   border-radius: 50px;
   padding: 4px 12px;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.08);
 }
 
 .cardTitle {
@@ -85,6 +88,7 @@
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
 }
 
 .card:hover .cardLine {

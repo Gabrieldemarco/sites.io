@@ -25,9 +25,9 @@
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(4, 4, 8, 0.95) 0%,
-    rgba(4, 4, 8, 0.7) 50%,
-    rgba(0, 0, 20, 0.85) 100%
+    rgba(3, 3, 10, 0.95) 0%,
+    rgba(3, 3, 10, 0.75) 50%,
+    rgba(0, 0, 20, 0.9) 100%
   );
   z-index: 1;
 }
@@ -37,11 +37,12 @@
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.12) 0%, transparent 70%);
   top: -200px;
   right: -100px;
   z-index: 1;
   animation: pulse 6s ease-in-out infinite;
+  filter: blur(40px);
 }
 
 .orb2 {
@@ -49,11 +50,12 @@
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 0, 102, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 0, 102, 0.08) 0%, transparent 70%);
   bottom: 0;
   left: -100px;
   z-index: 1;
   animation: pulse 8s ease-in-out infinite reverse;
+  filter: blur(40px);
 }
 
 @keyframes pulse {
@@ -108,7 +110,7 @@
 }
 
 .titleGrad {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  background: linear-gradient(135deg, #ffffff 0%, var(--primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -142,7 +144,7 @@
   font-weight: 800;
   color: var(--primary);
   line-height: 1;
-  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.2);
 }
 
 .statLabel {
@@ -185,6 +187,7 @@
   width: 1px;
   height: 40px;
   background: linear-gradient(to bottom, var(--primary), transparent);
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
   animation: scrollDown 2s ease-in-out infinite;
 }
 

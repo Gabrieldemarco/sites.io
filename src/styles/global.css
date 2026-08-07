@@ -6,20 +6,20 @@
 :root {
   --primary: #00d4ff;
   --accent: #ff0066;
-  --bg-deep: #040408;
-  --bg-dark: #0a0a12;
-  --bg-card: rgba(255, 255, 255, 0.04);
-  --bg-glass: rgba(255, 255, 255, 0.06);
-  --border-glass: rgba(255, 255, 255, 0.1);
+  --bg-deep: #03030a;
+  --bg-dark: #080814;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --border-glass: rgba(255, 255, 255, 0.08);
   --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.65);
-  --text-muted: rgba(255, 255, 255, 0.35);
-  --glow-primary: 0 0 30px rgba(0, 212, 255, 0.4);
-  --glow-accent: 0 0 30px rgba(255, 0, 102, 0.4);
+  --text-secondary: rgba(255, 255, 255, 0.75);
+  --text-muted: rgba(255, 255, 255, 0.4);
+  --glow-primary: 0 0 40px rgba(0, 212, 255, 0.35);
+  --glow-accent: 0 0 40px rgba(255, 0, 102, 0.35);
   --font: 'Outfit', system-ui, sans-serif;
-  --radius: 16px;
-  --radius-sm: 8px;
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 20px;
+  --radius-sm: 10px;
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --nav-height: 72px;
 }
 
@@ -128,7 +128,7 @@ ul {
 }
 
 .section-title span {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  background: linear-gradient(135deg, #ffffff 0%, var(--primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -161,8 +161,9 @@ ul {
   background: var(--bg-glass);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 /* ============================================================
@@ -184,35 +185,42 @@ ul {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, #0099bb 100%);
-  color: var(--bg-deep);
-  box-shadow: var(--glow-primary);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(0, 180, 216, 0.25) 100%);
+  color: var(--primary);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.1), var(--glow-primary);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 50px rgba(0, 212, 255, 0.6);
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.3), 0 0 60px rgba(0, 212, 255, 0.5);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(0, 180, 216, 0.35) 100%);
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, var(--accent) 0%, #cc0052 100%);
-  color: white;
-  box-shadow: var(--glow-accent);
+  background: linear-gradient(135deg, rgba(255, 0, 102, 0.15) 0%, rgba(220, 0, 90, 0.25) 100%);
+  color: var(--accent);
+  border: 1px solid rgba(255, 0, 102, 0.3);
+  box-shadow: 0 0 0 1px rgba(255, 0, 102, 0.1), var(--glow-accent);
 }
 
 .btn-accent:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 50px rgba(255, 0, 102, 0.6);
+  box-shadow: 0 0 0 1px rgba(255, 0, 102, 0.3), 0 0 60px rgba(255, 0, 102, 0.5);
+  background: linear-gradient(135deg, rgba(255, 0, 102, 0.2) 0%, rgba(220, 0, 90, 0.35) 100%);
 }
 
 .btn-outline {
   background: transparent;
-  color: var(--primary);
-  border: 1px solid var(--primary);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(10px);
 }
 
 .btn-outline:hover {
-  background: rgba(0, 212, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
   transform: translateY(-2px);
 }
 
