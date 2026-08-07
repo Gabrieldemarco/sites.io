@@ -65,7 +65,7 @@ export default function Footer() {
               <li><a href="#galeria">Galería</a></li>
               <li><a href="#resenas">Reseñas</a></li>
               <li><a href="#contacto">Contacto</a></li>
-              <li><a href="/#/admin">Panel Admin</a></li>
+              <li><a href="#/admin">Panel Admin</a></li>
             </ul>
           </div>
 
