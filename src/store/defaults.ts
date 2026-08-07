@@ -1,20 +1,89 @@
-import type { SiteConfig, AppState } from '@/types'
+import type { SiteConfig, AppState, ServiceItem } from '@/types'
 
 export const DEFAULT_CONFIG: SiteConfig = {
-  companyName: 'TeffyDron',
+  companyLogo: '',
+  companyName: 'sites',
+  primaryColor: '#00d4ff',
+  accentColor: '#ff0066',
+  heroBadgeText: '🚁 Drones Profesionales',
   tagline: 'Capturamos la emoción desde el cielo',
   heroSubtitle:
     'Drones profesionales para eventos deportivos en toda España y Europa. FPV Racing, cinematografía aérea y retransmisión en vivo.',
-  whatsappNumber: '34600000000',
-  contactEmail: 'info@teffydron.es',
+  stat1Num: '200+',
+  stat1Label: 'Eventos Filmados',
+  stat2Num: '15+',
+  stat2Label: 'Países',
+  stat3Num: '4K',
+  stat3Label: 'Resolución',
+  servicesTag: 'Servicios',
+  servicesTitle: 'Soluciones completas de drones',
+  servicesSubtitle: 'Ofrecemos soluciones completas de drones para todo tipo de eventos deportivos',
+  galleryTag: 'Galería',
+  galleryTitle: 'Nuestro trabajo en acción',
+  gallerySubtitle: 'Más de 200 eventos filmados en toda Europa. Cada vuelo es una historia única.',
+  videoTag: 'Showreel',
+  videoTitle: 'Nuestro trabajo habla por sí solo',
+  videoSubtitle: 'Más de 200 eventos filmados en toda Europa. Cada vuelo es una historia única.',
   videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+  reviewsTag: 'Testimonios',
+  reviewsTitle: 'Lo que dicen nuestros clientes',
+  contactTag: 'Contacto',
+  contactTitle: 'Hablemos de tu próximo evento',
+  contactSubtitle: 'Cuéntanos sobre tu evento y te enviaremos un presupuesto personalizado en menos de 24 horas.',
+  contactEmail: 'info@teffydron.es',
+  whatsappNumber: '34600000000',
+  serviceArea: 'España y Europa',
+  guaranteedResponse: '24 horas',
   instagramUrl: 'https://instagram.com/teffydron',
   youtubeUrl: 'https://youtube.com/@teffydron',
   facebookUrl: 'https://facebook.com/teffydron',
-  primaryColor: '#00d4ff',
-  accentColor: '#ff0066',
-  footerText: '© 2025 TeffyDron. Todos los derechos reservados. | RGPD · Aviso Legal',
+  footerText: '© 2025 sites. Todos los derechos reservados. | RGPD · Aviso Legal',
 }
+
+export const DEFAULT_SERVICES: ServiceItem[] = [
+  {
+    id: '1',
+    icon: '🎥',
+    title: 'Cinematografía Aérea',
+    description: 'Grabaciones en 4K/8K con estabilización gimbal para producciones de alta calidad.',
+    tag: 'Filmación',
+  },
+  {
+    id: '2',
+    icon: '🏎️',
+    title: 'FPV Racing',
+    description: 'Drones FPV de alta velocidad para carreras y eventos de motorsport en primera persona.',
+    tag: 'Racing',
+  },
+  {
+    id: '3',
+    icon: '📡',
+    title: 'Retransmisión en Vivo',
+    description: 'Transmisiones en tiempo real con baja latencia para eventos deportivos masivos.',
+    tag: 'Live',
+  },
+  {
+    id: '4',
+    icon: '🎯',
+    title: 'Inspección Técnica',
+    description: 'Análisis detallado de infraestructuras, instalaciones y terrenos con drones de precisión.',
+    tag: 'Inspección',
+  },
+  {
+    id: '5',
+    icon: '🗺️',
+    title: 'Cartografía 3D',
+    description: 'Modelos 3D y ortofotos de alta resolución para planificación y análisis.',
+    tag: 'Mapping',
+  },
+  {
+    id: '6',
+    icon: '🎬',
+    title: 'Producción Eventos',
+    description: 'Cobertura completa de eventos deportivos, conciertos y espectáculos aéreos.',
+    tag: 'Eventos',
+  },
+]
 
 export const DEFAULT_GALLERY = [
   {
@@ -96,6 +165,7 @@ export const DEFAULT_REVIEWS = [
 
 export const INITIAL_STATE: AppState = {
   siteConfig: DEFAULT_CONFIG,
+  services: DEFAULT_SERVICES,
   gallery: DEFAULT_GALLERY,
   reviews: DEFAULT_REVIEWS,
   messages: [],

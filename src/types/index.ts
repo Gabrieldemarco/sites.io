@@ -1,19 +1,51 @@
 // ============================================================
-// GLOBAL TYPES — TeffyDron
+// GLOBAL TYPES — TeffyDron CMS (White-Label Configurable)
 // ============================================================
 
+export interface ServiceItem {
+  id: string
+  icon: string
+  title: string
+  description: string
+  tag: string
+}
+
 export interface SiteConfig {
+  companyLogo: string
   companyName: string
+  primaryColor: string
+  accentColor: string
+  heroBadgeText: string
   tagline: string
   heroSubtitle: string
-  whatsappNumber: string
-  contactEmail: string
+  stat1Num: string
+  stat1Label: string
+  stat2Num: string
+  stat2Label: string
+  stat3Num: string
+  stat3Label: string
+  servicesTag: string
+  servicesTitle: string
+  servicesSubtitle: string
+  galleryTag: string
+  galleryTitle: string
+  gallerySubtitle: string
+  videoTag: string
+  videoTitle: string
+  videoSubtitle: string
   videoUrl: string
+  reviewsTag: string
+  reviewsTitle: string
+  contactTag: string
+  contactTitle: string
+  contactSubtitle: string
+  contactEmail: string
+  whatsappNumber: string
+  serviceArea: string
+  guaranteedResponse: string
   instagramUrl: string
   youtubeUrl: string
   facebookUrl: string
-  primaryColor: string
-  accentColor: string
   footerText: string
 }
 
@@ -21,7 +53,7 @@ export interface GalleryImage {
   id: string
   src: string
   alt: string
-  category: 'deportes' | 'fpv' | 'cinematica' | 'aerea'
+  category: string
   createdAt: string
 }
 
@@ -49,6 +81,7 @@ export interface ContactMessage {
 export type AdminSection =
   | 'dashboard'
   | 'config'
+  | 'services'
   | 'gallery'
   | 'videos'
   | 'reviews'
@@ -56,6 +89,7 @@ export type AdminSection =
 
 export interface AppState {
   siteConfig: SiteConfig
+  services: ServiceItem[]
   gallery: GalleryImage[]
   reviews: Review[]
   messages: ContactMessage[]
@@ -63,6 +97,9 @@ export interface AppState {
 
 export type AppAction =
   | { type: 'UPDATE_CONFIG'; payload: Partial<SiteConfig> }
+  | { type: 'ADD_SERVICE'; payload: ServiceItem }
+  | { type: 'UPDATE_SERVICE'; payload: ServiceItem }
+  | { type: 'DELETE_SERVICE'; payload: string }
   | { type: 'ADD_IMAGE'; payload: GalleryImage }
   | { type: 'DELETE_IMAGE'; payload: string }
   | { type: 'ADD_REVIEW'; payload: Review }
