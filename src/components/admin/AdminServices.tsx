@@ -131,31 +131,36 @@ export default function AdminServices() {
           >
             {editing ? '💾 Guardar cambios' : '➕ Añadir servicio'}
           </button>
-          {editing && (
-            <button
-              className="btn btn-outline"
-              onClick={() => {
-                setEditing(null)
-                setForm({ icon: '', title: '', description: '', tag: '' })
-              }}
-            >
-              Cancelar
-            </button>
-          )}
         </div>
       </div>
 
       {/* Services list */}
       <div className={`glass-card ${styles.section}`}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24, gap: 16, flexWrap: 'wrap' }}>
           <h3 className={styles.sectionTitle} style={{ marginBottom: 0 }}>
             🛠️ Servicios actuales ({services.length})
           </h3>
-          {!editing && (
-            <button className="btn btn-outline" onClick={handleAdd} style={{ fontSize: 13, padding: '8px 16px' }}>
-              ➕ Nuevo
+          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            <button
+              className="btn btn-primary"
+              onClick={handleAdd}
+              style={{ fontSize: 13, padding: '10px 18px' }}
+            >
+              ➕ Nuevo servicio
             </button>
-          )}
+            {editing && (
+              <button
+                className="btn btn-outline"
+                onClick={() => {
+                  setEditing(null)
+                  setForm({ icon: '', title: '', description: '', tag: '' })
+                }}
+                style={{ fontSize: 13, padding: '10px 18px' }}
+              >
+                Cancelar edición
+              </button>
+            )}
+          </div>
         </div>
 
         <div className={styles.servicesList}>
@@ -172,7 +177,7 @@ export default function AdminServices() {
               <div className={styles.serviceActions}>
                 <button
                   className="btn btn-outline"
-                  style={{ fontSize: 12, padding: '6px 12px' }}
+                  style={{ fontSize: 13, padding: '8px 16px' }}
                   onClick={() => handleEdit(service)}
                 >
                   ✏️ Editar
@@ -182,7 +187,7 @@ export default function AdminServices() {
                   onClick={() => handleDelete(service.id)}
                   aria-label="Eliminar servicio"
                 >
-                  🗑️
+                  🗑️ Eliminar
                 </button>
               </div>
             </div>
