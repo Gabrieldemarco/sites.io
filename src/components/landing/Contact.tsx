@@ -4,17 +4,6 @@ import { useRevealAll } from '@/hooks/useReveal'
 import type { ContactMessage } from '@/types'
 import styles from './Contact.module.css'
 
-const EVENT_TYPES = [
-  'Fútbol / Rugby / Hockey',
-  'Ciclismo / Triatlón',
-  'Atletismo / Maratón',
-  'Automovilismo / Motociclismo',
-  'Deportes acuáticos',
-  'Esquí / Snowboard',
-  'eSports / Gaming',
-  'Otro evento',
-]
-
 interface FormState {
   name: string
   email: string
@@ -38,6 +27,8 @@ export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const formId = useId()
   useRevealAll([])
+
+  const EVENT_TYPES = siteConfig.eventTypes.split(',').map((t) => t.trim())
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -272,10 +263,9 @@ export default function Contact() {
             <div className={`${styles.certCard} glass-card`}>
               <p className={styles.certTitle}>Certificaciones y permisos</p>
               <ul className={styles.certList}>
-                <li>✅ Piloto certificado AESA (España)</li>
-                <li>✅ Licencia EASA categoría Específica</li>
-                <li>✅ Seguro RC de 1M€</li>
-                <li>✅ Registro operador UAS</li>
+                {siteConfig.certifications.split(',').map((cert, i) => (
+                  <li key={i}>✅ {cert.trim()}</li>
+                ))}
               </ul>
             </div>
           </div>

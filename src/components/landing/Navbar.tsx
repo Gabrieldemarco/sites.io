@@ -2,18 +2,16 @@ import React, { useState, useEffect } from 'react'
 import { useAppState } from '@/store/AppContext'
 import styles from './Navbar.module.css'
 
-const NAV_LINKS = [
-  { href: '#servicios', label: 'Servicios' },
-  { href: '#galeria', label: 'Galería' },
-  { href: '#video', label: 'Showreel' },
-  { href: '#resenas', label: 'Reseñas' },
-  { href: '#contacto', label: 'Contacto' },
-]
-
 export default function Navbar() {
   const { siteConfig } = useAppState()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+
+  const NAV_LINKS = siteConfig.navbarLinks.split(',').map((link) => {
+    const label = link.trim()
+    const href = `#${label.toLowerCase().replace(/ /g, '').replace('showreel', 'video').replace('reseñas', 'resenas')}`
+    return { href, label }
+  })
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)

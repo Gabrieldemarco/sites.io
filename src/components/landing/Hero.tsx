@@ -25,11 +25,11 @@ export default function Hero() {
           muted
           loop
           playsInline
-          poster="https://images.unsplash.com/photo-1527977966861-9b05741b38f5?w=1920"
+          poster={siteConfig.heroVideoPoster}
           className={styles.videoBg}
         >
           <source
-            src="https://www.w3schools.com/html/mov_bbb.mp4"
+            src={siteConfig.heroVideoUrl}
             type="video/mp4"
           />
         </video>

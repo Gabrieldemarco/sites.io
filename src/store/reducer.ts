@@ -9,7 +9,14 @@ export function loadState(): AppState {
     if (!raw) return INITIAL_STATE
     const parsed: unknown = JSON.parse(raw)
     if (typeof parsed === 'object' && parsed !== null) {
-      return { ...INITIAL_STATE, ...(parsed as Partial<AppState>) }
+      const loaded = parsed as Partial<AppState>
+      // Merge siteConfig deeply to ensure new fields are present
+      const mergedConfig = { ...INITIAL_STATE.siteConfig, ...loaded.siteConfig }
+      return {
+        ...INITIAL_STATE,
+        ...loaded,
+        siteConfig: mergedConfig,
+      }
     }
     return INITIAL_STATE
   } catch {

@@ -47,6 +47,17 @@ export interface SiteConfig {
   youtubeUrl: string
   facebookUrl: string
   footerText: string
+  heroVideoUrl: string
+  heroVideoPoster: string
+  navbarLinks: string
+  eventTypes: string
+  certifications: string
+  footerServicesLinks: string
+  footerCompanyLinks: string
+  footerLegalLinks: string
+  privacyPolicyUrl: string
+  legalNoticeUrl: string
+  cookiesPolicyUrl: string
 }
 
 export interface GalleryImage {

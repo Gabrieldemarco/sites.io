@@ -129,6 +129,119 @@ export default function AdminConfig() {
         </p>
       </div>
 
+      <div className={`glass-card ${styles.section}`}>
+        <h3 className={styles.sectionTitle}>🎥 Video del Hero</h3>
+        <div className={styles.grid2}>
+          <Field
+            label="URL del video de fondo"
+            name="heroVideoUrl"
+            value={form.heroVideoUrl}
+            onChange={handleChange}
+            placeholder="https://..."
+            type="url"
+          />
+          <Field
+            label="URL del poster (imagen)"
+            name="heroVideoPoster"
+            value={form.heroVideoPoster}
+            onChange={handleChange}
+            placeholder="https://..."
+            type="url"
+          />
+        </div>
+      </div>
+
+      <div className={`glass-card ${styles.section}`}>
+        <h3 className={styles.sectionTitle}>🔗 Links del Navbar</h3>
+        <div className="form-group" style={{ marginBottom: 16 }}>
+          <label className="form-label">Links del menú (separados por comas)</label>
+          <textarea
+            name="navbarLinks"
+            className="form-input"
+            value={form.navbarLinks}
+            onChange={handleChange}
+            rows={2}
+            placeholder="Servicios,Galería,Showreel,Reseñas,Contacto"
+          />
+        </div>
+      </div>
+
+      <div className={`glass-card ${styles.section}`}>
+        <h3 className={styles.sectionTitle}>📋 Tipos de Eventos</h3>
+        <div className="form-group" style={{ marginBottom: 16 }}>
+          <label className="form-label">Tipos de eventos (separados por comas)</label>
+          <textarea
+            name="eventTypes"
+            className="form-input"
+            value={form.eventTypes}
+            onChange={handleChange}
+            rows={3}
+            placeholder="Fútbol / Rugby / Hockey,Ciclismo / Triatlón,Atletismo / Maratón..."
+          />
+        </div>
+      </div>
+
+      <div className={`glass-card ${styles.section}`}>
+        <h3 className={styles.sectionTitle}>📜 Certificaciones</h3>
+        <div className="form-group" style={{ marginBottom: 16 }}>
+          <label className="form-label">Certificaciones y permisos (separados por comas)</label>
+          <textarea
+            name="certifications"
+            className="form-input"
+            value={form.certifications}
+            onChange={handleChange}
+            rows={3}
+            placeholder="Piloto certificado AESA,Licencia EASA,Seguro RC..."
+          />
+        </div>
+      </div>
+
+      <div className={`glass-card ${styles.section}`}>
+        <h3 className={styles.sectionTitle}>🦶 Links del Footer</h3>
+        <div className="form-group" style={{ marginBottom: 16 }}>
+          <label className="form-label">Links de Servicios (separados por comas)</label>
+          <textarea
+            name="footerServicesLinks"
+            className="form-input"
+            value={form.footerServicesLinks}
+            onChange={handleChange}
+            rows={2}
+            placeholder="Eventos Deportivos,Retransmisión en Vivo,Fotografía Aérea..."
+          />
+        </div>
+        <div className="form-group" style={{ marginBottom: 16 }}>
+          <label className="form-label">Links de Empresa (separados por comas)</label>
+          <textarea
+            name="footerCompanyLinks"
+            className="form-input"
+            value={form.footerCompanyLinks}
+            onChange={handleChange}
+            rows={2}
+            placeholder="Showreel,Galería,Reseñas,Contacto,Panel Admin"
+          />
+        </div>
+        <div className="form-group" style={{ marginBottom: 16 }}>
+          <label className="form-label">Links Legales (separados por comas)</label>
+          <textarea
+            name="footerLegalLinks"
+            className="form-input"
+            value={form.footerLegalLinks}
+            onChange={handleChange}
+            rows={2}
+            placeholder="Aviso Legal,Política de Privacidad,Política de Cookies,RGPD"
+          />
+        </div>
+      </div>
+
+      <div className={`glass-card ${styles.section}`}>
+        <h3 className={styles.sectionTitle}>📄 URLs de Páginas Legales</h3>
+        <div className={styles.grid2}>
+          <Field label="Política de Privacidad" name="privacyPolicyUrl" value={form.privacyPolicyUrl} onChange={handleChange} type="url" placeholder="#" />
+          <Field label="Aviso Legal" name="legalNoticeUrl" value={form.legalNoticeUrl} onChange={handleChange} type="url" placeholder="#" />
+          <Field label="Política de Cookies" name="cookiesPolicyUrl" value={form.cookiesPolicyUrl} onChange={handleChange} type="url" placeholder="#" />
+        </div>
+      </div>
+
       <div className={styles.actions}>
         {saved && <span className={styles.savedMsg}>✅ Configuración guardada</span>}
         <button className="btn btn-outline" onClick={handleReset} id="admin-reset-config">

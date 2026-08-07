@@ -50,32 +50,37 @@ export default function Footer() {
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Servicios</h4>
             <ul className={styles.colLinks}>
-              <li><a href="#servicios">Eventos Deportivos</a></li>
-              <li><a href="#servicios">Retransmisión en Vivo</a></li>
-              <li><a href="#servicios">Fotografía Aérea</a></li>
-              <li><a href="#servicios">FPV Racing</a></li>
-              <li><a href="#servicios">Mapping 3D</a></li>
+              {siteConfig.footerServicesLinks.split(',').map((link, i) => (
+                <li key={i}><a href="#servicios">{link.trim()}</a></li>
+              ))}
             </ul>
           </div>
 
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Empresa</h4>
             <ul className={styles.colLinks}>
-              <li><a href="#video">Showreel</a></li>
-              <li><a href="#galeria">Galería</a></li>
-              <li><a href="#resenas">Reseñas</a></li>
-              <li><a href="#contacto">Contacto</a></li>
-              <li><a href="#/admin">Panel Admin</a></li>
+              {siteConfig.footerCompanyLinks.split(',').map((link, i) => {
+                const label = link.trim()
+                const href = label === 'Panel Admin' ? '#/admin' : 
+                             label === 'Showreel' ? '#video' :
+                             label === 'Reseñas' ? '#resenas' :
+                             `#${label.toLowerCase().replace(/ /g, '')}`
+                return <li key={i}><a href={href}>{label}</a></li>
+              })}
             </ul>
           </div>
 
           <div className={styles.col}>
             <h4 className={styles.colTitle}>Legal</h4>
             <ul className={styles.colLinks}>
-              <li><a href="#">Aviso Legal</a></li>
-              <li><a href="#">Política de Privacidad</a></li>
-              <li><a href="#">Política de Cookies</a></li>
-              <li><a href="#">RGPD</a></li>
+              {siteConfig.footerLegalLinks.split(',').map((link, i) => {
+                const label = link.trim()
+                let href = '#'
+                if (label.includes('Privacidad')) href = siteConfig.privacyPolicyUrl
+                else if (label.includes('Aviso Legal')) href = siteConfig.legalNoticeUrl
+                else if (label.includes('Cookies')) href = siteConfig.cookiesPolicyUrl
+                return <li key={i}><a href={href}>{label}</a></li>
+              })}
             </ul>
           </div>
         </div>
