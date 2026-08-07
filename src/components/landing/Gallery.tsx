@@ -13,7 +13,7 @@ const CATEGORIES: Array<{ key: GalleryImage['category'] | 'all'; label: string }
 ]
 
 export default function Gallery() {
-  const { gallery } = useAppState()
+  const { gallery, siteConfig } = useAppState()
   const [filter, setFilter] = useState<GalleryImage['category'] | 'all'>('all')
   const [lightbox, setLightbox] = useState<GalleryImage | null>(null)
   useRevealAll([filter])
@@ -25,12 +25,12 @@ export default function Gallery() {
     <section id="galeria" className={`section ${styles.galery}`}>
       <div className="container">
         <div className="reveal">
-          <p className="section-tag">Galería</p>
+          <p className="section-tag">{siteConfig.galleryTag}</p>
           <h2 className="section-title">
-            Momentos que <span>definen el deporte</span>
+            {siteConfig.galleryTitle}
           </h2>
           <p className="section-subtitle">
-            Una selección de nuestros mejores trabajos en eventos deportivos por toda Europa.
+            {siteConfig.gallerySubtitle}
           </p>
         </div>
 

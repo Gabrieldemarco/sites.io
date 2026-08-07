@@ -1,5 +1,5 @@
 // ============================================================
-// GLOBAL TYPES — TeffyDron CMS (White-Label Configurable)
+// GLOBAL TYPES — Rootwell CMS (White-Label Configurable)
 // ============================================================
 
 export interface ServiceItem {

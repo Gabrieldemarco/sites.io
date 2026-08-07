@@ -4,7 +4,7 @@ import { useRevealAll } from '@/hooks/useReveal'
 import styles from './Reviews.module.css'
 
 export default function Reviews() {
-  const { reviews } = useAppState()
+  const { reviews, siteConfig } = useAppState()
   const [current, setCurrent] = useState(0)
   useRevealAll([])
 
@@ -21,10 +21,10 @@ export default function Reviews() {
       <div className="container">
         <div className="reveal" style={{ textAlign: 'center' }}>
           <p className="section-tag" style={{ justifyContent: 'center' }}>
-            Reseñas
+            {siteConfig.reviewsTag}
           </p>
           <h2 className="section-title" style={{ textAlign: 'center' }}>
-            Lo que dicen nuestros <span>clientes</span>
+            {siteConfig.reviewsTitle}
           </h2>
         </div>
 

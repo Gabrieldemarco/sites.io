@@ -2,7 +2,7 @@ import type { SiteConfig, AppState, ServiceItem } from '@/types'
 
 export const DEFAULT_CONFIG: SiteConfig = {
   companyLogo: '',
-  companyName: 'sites',
+  companyName: 'Rootwell',
   primaryColor: '#00d4ff',
   accentColor: '#ff0066',
   heroBadgeText: '🚁 Drones Profesionales',
@@ -37,7 +37,7 @@ export const DEFAULT_CONFIG: SiteConfig = {
   instagramUrl: 'https://instagram.com/teffydron',
   youtubeUrl: 'https://youtube.com/@teffydron',
   facebookUrl: 'https://facebook.com/teffydron',
-  footerText: '© 2025 sites. Todos los derechos reservados. | RGPD · Aviso Legal',
+  footerText: '© 2025 Rootwell. Todos los derechos reservados. | RGPD · Aviso Legal',
 }
 
 export const DEFAULT_SERVICES: ServiceItem[] = [

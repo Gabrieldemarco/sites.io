@@ -1,7 +1,7 @@
 import type { AppState, AppAction } from '@/types'
 import { INITIAL_STATE } from './defaults'
 
-const STORAGE_KEY = 'teffydron_state'
+const STORAGE_KEY = 'rootwell_state'
 
 export function loadState(): AppState {
   try {
@@ -32,6 +32,18 @@ export function appReducer(state: AppState, action: AppAction): AppState {
 
     case 'UPDATE_CONFIG':
       return { ...state, siteConfig: { ...state.siteConfig, ...action.payload } }
+
+    case 'ADD_SERVICE':
+      return { ...state, services: [...state.services, action.payload] }
+
+    case 'UPDATE_SERVICE':
+      return {
+        ...state,
+        services: state.services.map((s) => (s.id === action.payload.id ? action.payload : s)),
+      }
+
+    case 'DELETE_SERVICE':
+      return { ...state, services: state.services.filter((s) => s.id !== action.payload) }
 
     case 'ADD_IMAGE':
       return { ...state, gallery: [...state.gallery, action.payload] }

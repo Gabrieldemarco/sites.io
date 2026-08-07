@@ -95,12 +95,12 @@ export default function Contact() {
       <div className={styles.bg} />
       <div className="container">
         <div className="reveal">
-          <p className="section-tag">Contacto</p>
+          <p className="section-tag">{siteConfig.contactTag}</p>
           <h2 className="section-title">
-            Hablemos de tu <span>próximo evento</span>
+            {siteConfig.contactTitle}
           </h2>
           <p className="section-subtitle">
-            Cuéntanos sobre tu evento y te enviaremos un presupuesto personalizado en menos de 24 horas.
+            {siteConfig.contactSubtitle}
           </p>
         </div>
 

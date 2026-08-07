@@ -32,13 +32,13 @@ export default function VideoShowreel() {
       <div className="container">
         <div className="reveal" style={{ textAlign: 'center' }}>
           <p className="section-tag" style={{ justifyContent: 'center' }}>
-            Showreel
+            {siteConfig.videoTag}
           </p>
           <h2 className="section-title" style={{ textAlign: 'center' }}>
-            Nuestro trabajo <span>habla por sí solo</span>
+            {siteConfig.videoTitle}
           </h2>
           <p className="section-subtitle" style={{ margin: '0 auto 60px', textAlign: 'center' }}>
-            Más de 200 eventos filmados en toda Europa. Cada vuelo es una historia única.
+            {siteConfig.videoSubtitle}
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function VideoShowreel() {
             <div className={styles.glow} />
             <iframe
               src={embedUrl}
-              title="TeffyDron Showreel"
+              title="Rootwell Showreel"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
               className={styles.iframe}

@@ -45,7 +45,7 @@ export default function Hero() {
       <div className={`container ${styles.content}`}>
         <div className={styles.badge}>
           <span className={styles.badgeDot} />
-          Disponible para eventos en España y Europa
+          {siteConfig.heroBadgeText}
         </div>
 
         <h1 className={styles.title}>
@@ -60,18 +60,18 @@ export default function Hero() {
 
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <span className={styles.statNum}>+200</span>
-            <span className={styles.statLabel}>Eventos cubiertos</span>
+            <span className={styles.statNum}>{siteConfig.stat1Num}</span>
+            <span className={styles.statLabel}>{siteConfig.stat1Label}</span>
           </div>
           <div className={styles.statDiv} />
           <div className={styles.stat}>
-            <span className={styles.statNum}>8K</span>
-            <span className={styles.statLabel}>Calidad de imagen</span>
+            <span className={styles.statNum}>{siteConfig.stat2Num}</span>
+            <span className={styles.statLabel}>{siteConfig.stat2Label}</span>
           </div>
           <div className={styles.statDiv} />
           <div className={styles.stat}>
-            <span className={styles.statNum}>15+</span>
-            <span className={styles.statLabel}>Países de Europa</span>
+            <span className={styles.statNum}>{siteConfig.stat3Num}</span>
+            <span className={styles.statLabel}>{siteConfig.stat3Label}</span>
           </div>
         </div>
 

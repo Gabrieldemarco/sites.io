@@ -328,8 +328,76 @@
   border: 1px solid var(--border-glass);
 }
 
+/* Services admin */
+.servicesList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.serviceItem {
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  transition: all var(--transition);
+}
+
+.serviceHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.serviceIcon {
+  font-size: 28px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-glass);
+}
+
+.serviceTitle {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.serviceTag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--primary);
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 50px;
+  padding: 3px 10px;
+  display: inline-block;
+  margin-top: 4px;
+}
+
+.serviceDesc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.serviceActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .grid2 { grid-template-columns: 1fr; }
   .section { padding: 20px; }
   .messageHeader { flex-direction: column; }
+  .serviceHeader { flex-direction: column; align-items: flex-start; }
+  .serviceActions { flex-wrap: wrap; }
 }

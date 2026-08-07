@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import type { AdminSection } from '@/types'
 import { useAppState, useAppDispatch } from '@/store/AppContext'
 import AdminConfig from './AdminConfig'
+import AdminServices from './AdminServices'
 import AdminGallery from './AdminGallery'
 import AdminReviews from './AdminReviews'
 import AdminMessages from './AdminMessages'
@@ -11,6 +12,7 @@ import styles from './AdminLayout.module.css'
 const NAV_ITEMS: Array<{ id: AdminSection; label: string; icon: string }> = [
   { id: 'dashboard', label: 'Dashboard', icon: '📊' },
   { id: 'config', label: 'Configuración', icon: '⚙️' },
+  { id: 'services', label: 'Servicios', icon: '🛠️' },
   { id: 'gallery', label: 'Galería', icon: '🖼️' },
   { id: 'videos', label: 'Video', icon: '🎬' },
   { id: 'reviews', label: 'Reseñas', icon: '⭐' },
@@ -19,7 +21,7 @@ const NAV_ITEMS: Array<{ id: AdminSection; label: string; icon: string }> = [
 
 export default function AdminLayout() {
   const [section, setSection] = useState<AdminSection>('dashboard')
-  const { messages, gallery, reviews } = useAppState()
+  const { messages, gallery, reviews, services } = useAppState()
   const unread = messages.filter((m) => !m.read).length
 
   return (
@@ -28,7 +30,7 @@ export default function AdminLayout() {
         <div className={styles.sidebarLogo}>
           <span>🚁</span>
           <div>
-            <p className={styles.logoText}>TeffyDron</p>
+            <p className={styles.logoText}>Rootwell</p>
             <p className={styles.logoSub}>Panel Admin</p>
           </div>
         </div>
@@ -78,11 +80,13 @@ export default function AdminLayout() {
               galleryCount={gallery.length}
               reviewCount={reviews.length}
               messageCount={messages.length}
+              serviceCount={services.length}
               unread={unread}
               onNavigate={setSection}
             />
           )}
           {section === 'config' && <AdminConfig />}
+          {section === 'services' && <AdminServices />}
           {section === 'gallery' && <AdminGallery />}
           {section === 'videos' && <AdminVideos />}
           {section === 'reviews' && <AdminReviews />}
@@ -97,16 +101,19 @@ function AdminDashboard({
   galleryCount,
   reviewCount,
   messageCount,
+  serviceCount,
   unread,
   onNavigate,
 }: {
   galleryCount: number
   reviewCount: number
   messageCount: number
+  serviceCount: number
   unread: number
   onNavigate: (s: AdminSection) => void
 }) {
   const stats: Array<{ label: string; value: number; icon: string; section: AdminSection }> = [
+    { label: 'Servicios activos', value: serviceCount, icon: '🛠️', section: 'services' },
     { label: 'Imágenes en galería', value: galleryCount, icon: '🖼️', section: 'gallery' },
     { label: 'Reseñas publicadas', value: reviewCount, icon: '⭐', section: 'reviews' },
     { label: 'Mensajes totales', value: messageCount, icon: '📩', section: 'messages' },
@@ -133,6 +140,7 @@ function AdminDashboard({
         <h3 style={{ marginBottom: 12, fontSize: '1rem' }}>Guía rápida del panel</h3>
         <ul style={{ display: 'flex', flexDirection: 'column', gap: 8, color: 'var(--text-secondary)', fontSize: 14, paddingLeft: 0 }}>
           <li>⚙️ <strong>Configuración</strong> — Nombre, WhatsApp, email, video URL, redes sociales</li>
+          <li>🛠️ <strong>Servicios</strong> — Gestiona los servicios que ofreces</li>
           <li>🖼️ <strong>Galería</strong> — Añade o elimina imágenes por categoría</li>
           <li>🎬 <strong>Video</strong> — Actualiza la URL del showreel (YouTube o Vimeo)</li>
           <li>⭐ <strong>Reseñas</strong> — Gestiona los testimonios de clientes</li>
